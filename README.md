@@ -3,8 +3,8 @@ This package was originally authored by [Allardvm](https://github.com/Allardvm) 
 LightGBM.jl
 [![CI](https://github.com/wakakkusa/LightGBM.jl/workflows/CI/badge.svg)]
 [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](LICENSE.md)
-[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://wakakkusa.github.io/LightGBM-pg/stable)
-[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://wakakkusa.github.io/LightGBM-pg/dev)
+[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://wakakusa.github.io/LightGBM-pg/stable)
+[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://wakakusa.github.io/LightGBM-pg/dev)
 ========
 
 **LightGBM.jl** provides a high-performance Julia interface for Microsoft's
