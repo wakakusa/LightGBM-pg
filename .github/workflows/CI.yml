@@ -53,6 +53,6 @@ jobs:
       - run: |
           julia --project=docs -e '
             using Documenter: DocMeta, doctest
-            using githubaction_example_for_julia
-            DocMeta.setdocmeta!(githubaction_example_for_julia, :DocTestSetup, :(using githubaction_example_for_julia); recursive=true)
-            doctest(githubaction_example_for_julia)'
+            using LightGBM
+            DocMeta.setdocmeta!(LightGBM, :DocTestSetup, :(using LightGBM); recursive=true)
+            doctest(LightGBM)'
