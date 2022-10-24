@@ -6,7 +6,7 @@ makedocs(;
     sitename="LightGBM.jl",
     format=Documenter.HTML(;
         prettyurls=get(ENV, "CI", "false") == "true",
-        canonical="https://wakakusa.github.io/LightGBM.jl",
+        canonical="https://wakakusa.github.io/LightGBM-pg",
         assets=String[],
     ),
     pages=[
