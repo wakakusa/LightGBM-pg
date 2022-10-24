@@ -16,5 +16,5 @@ makedocs(;
 )
 
 deploydocs(;
-    repo="github.com/wakakusa/LightGBM.jl",
+    repo="github.com/wakakusa/LightGBM-pg",
 )
