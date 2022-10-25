@@ -65,38 +65,38 @@ jobs:
 #      - run: julia --color=yes --project -e 'using Pkg; Pkg.build(); Pkg.test(coverage=true);'
 #        env:
 #          LIGHTGBM_EXAMPLES_PATH: LightGBM-2.3.1
-#  docs:
-#    name: Documentation
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v2
-#      - uses: julia-actions/setup-julia@latest
-#      - name: Build package to grab binary
-#        run: julia --project -e 'using Pkg; Pkg.build(); Pkg.instantiate()'
-#      - name: Instantiate docs
-#        run: julia --project=docs/ -e 'using Pkg; Pkg.develop(PackageSpec(path=pwd())); Pkg.instantiate()'
-#      - name: Build docs and deploy
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # For authentication with GitHub Actions token
-#          DOCUMENTER_KEY: ${{ secrets.DOCUMENTER_KEY }} # For authentication with SSH deploy key
-#        run: julia --project=docs/ docs/make.jl
   docs:
     name: Documentation
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - uses: actions/checkout@v2
-      - uses: julia-actions/setup-julia@v1
-        with:
-          version: '1'
-      - uses: julia-actions/julia-buildpkg@v1
-      - uses: julia-actions/julia-docdeploy@v1
+      - uses: julia-actions/setup-julia@latest
+      - name: Build package to grab binary
+        run: julia --project -e 'using Pkg; Pkg.build(); Pkg.instantiate()'
+      - name: Instantiate docs
+        run: julia --project=docs/ -e 'using Pkg; Pkg.develop(PackageSpec(path=pwd())); Pkg.instantiate()'
+      - name: Build docs and deploy
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: |
-          julia --project=docs -e '
-            using Documenter: DocMeta, doctest
-            using LightGBM
-            DocMeta.setdocmeta!(LightGBM, :DocTestSetup, :(using LightGBM); recursive=true)
-            doctest(LightGBM)'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # For authentication with GitHub Actions token
+          DOCUMENTER_KEY: ${{ secrets.DOCUMENTER_KEY }} # For authentication with SSH deploy key
+        run: julia --project=docs/ docs/make.jl
+#  docs:
+#    name: Documentation
+#    runs-on: ubuntu-latest
+#    permissions:
+#      contents: write
+#    steps:
+#      - uses: actions/checkout@v2
+#      - uses: julia-actions/setup-julia@v1
+#        with:
+#          version: '1'
+#      - uses: julia-actions/julia-buildpkg@v1
+#      - uses: julia-actions/julia-docdeploy@v1
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#      - run: |
+#          julia --project=docs -e '
+#            using Documenter: DocMeta, doctest
+#            using LightGBM
+#            DocMeta.setdocmeta!(LightGBM, :DocTestSetup, :(using LightGBM); recursive=true)
+#            doctest(LightGBM)'
