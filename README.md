@@ -1,4 +1,4 @@
-v33
+v34
 This package was originally authored by [Allardvm](https://github.com/Allardvm) and [wakakusa](https://github.com/wakakusa/)
 
 LightGBM.jl
