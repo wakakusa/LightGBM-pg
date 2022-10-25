@@ -1,6 +1,6 @@
 LightGBM.jl
 ========
-v12
+v13
 **LightGBM.jl** provides a high-performance Julia interface for Microsoft's
 [LightGBM](https://lightgbm.readthedocs.io/en/latest/).
 
